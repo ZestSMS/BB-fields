@@ -1,0 +1,7 @@
+.ui-datepicker {
+	font-size: 12px;
+}
+.ui-datepicker select {
+	color: #000;
+	padding: 2px;
+}
