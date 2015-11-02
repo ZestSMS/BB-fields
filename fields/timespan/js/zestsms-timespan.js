@@ -1,9 +1,9 @@
 (function($){
 
-	ZestSMSTimepicker = {
+	ZestSMSTimespan = {
     _init: function()
     {
-      $('body').delegate('.zestsms-timepicker .time', 'click', function(){
+      $('body').delegate('.zestsms-timespan .time', 'click', function(){
         if (!$(this).hasClass("ui-timepicker-input")) {
           $(this).timepicker({
             'appendTo': $(this).parent().parent(),
@@ -15,10 +15,10 @@
         $(this).timepicker('show');
       });
 
-			$('body').delegate('.zestsms-timepicker .time', 'change', function(){
+			$('body').delegate('.zestsms-timespan .time', 'change', function(){
         var range_input = $(this).attr('data-range'),
-				start = $.trim($('.zestsms-timepicker .start[data-range='+ range_input +']').val()),
-        end = $.trim($('.zestsms-timepicker .end[data-range='+ range_input +']').val());
+				start = $.trim($('.zestsms-timespan .start[data-range='+ range_input +']').val()),
+        end = $.trim($('.zestsms-timespan .end[data-range='+ range_input +']').val());
 
         $('input.' + range_input).val(start + ' to ' + end);
       });
@@ -26,7 +26,7 @@
   }
 
   $(function(){
-      ZestSMSTimepicker._init();
+      ZestSMSTimespan._init();
   });
 
 })(jQuery);
