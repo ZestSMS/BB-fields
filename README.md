@@ -1,6 +1,10 @@
 # BB-fields
 A few additional fields for Beaver Builder modules.
 
-You need to define 2 constants before including the fields:
-ZESTSMS_FIELDS_URL = url to fields directory
-ZESTSMS_FIELDS_DIR = directory path to your fields
+##Usage
+Include these in your plugin inside of a folder called "fields" and set the constants below:
+
+```
+define('ZESTSMS_FIELDS_DIR', plugin_dir_path( __FILE__ ) . 'fields/');
+define('ZESTSMS_FIELDS_URL', plugin_dir_url( __FILE__ ) . 'fields/');
+```
