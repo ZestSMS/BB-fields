@@ -56,6 +56,25 @@ FLBuilder::register_module('ZestSMSExampleModule', array(
 						'label'     => __('Pages', 'zestsms'),
 						'show_option_none' => __('-- Select --', 'zestsms'),
 						'option_none_value'=> 0
+					),
+					'select2'			=> array(
+						'type'				=> 'zestsms-select2',
+						'label'				=> __('Select2', 'zestsms'),
+						'options'			=> array(
+							'option-1'		=> __('Option 1', 'zestsms'),
+							'option-2'		=> __('Option 2', 'zestsms'),
+							'option-3'		=> __('Option 3', 'zestsms')
+						),
+						'multi-select' => true
+					),
+					'select2_custom'			=> array(
+						'type'				=> 'zestsms-select2',
+						'label'				=> __('Select2 Custom', 'zestsms'),
+						'options_from_field' => 'select2_custom',
+						'attributes'  => array(
+							'data-placeholder'  => __('Optional'),
+							'data-tags' => true
+						)
 					)
 				)
 			)
