@@ -75,8 +75,8 @@ add_action( 'fl_builder_control_zestsms-select2', 'zestsms_select2_field', 1, 4 
 function zestsms_select2_field_assets() {
 	if ( class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
 		wp_enqueue_script( 'select2', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1-rc.1/js/select2.min.js', array('jquery'), '4.0.1', true );
-		wp_enqueue_script( 'select2-settings', ZESTSMS_FIELDS_URL . 'select2/js/select2-settings.js', array(), '1.0', true );
-		wp_enqueue_style('select2', ZESTSMS_FIELDS_URL . 'select2/css/select2.min.css', false, null);
+		wp_enqueue_script( 'select2-settings', ZESTSMS_FIELDS_URL . 'zestsms-select2/js/select2-settings.js', array(), '1.0', true );
+		wp_enqueue_style('select2', ZESTSMS_FIELDS_URL . 'zestsms-select2/css/select2.min.css', false, null);
 	}
 }
 add_action( 'wp_enqueue_scripts', 'zestsms_select2_field_assets' );

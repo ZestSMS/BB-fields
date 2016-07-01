@@ -31,8 +31,8 @@ add_action( 'fl_builder_control_zestsms-pdf', 'zestsms_pdf_field', 1, 3 );
 
 function zestsms_pdf_field_assets() {
     if ( class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
-    		wp_enqueue_style( 'zestsms-pdf', ZESTSMS_FIELDS_URL . 'pdf/css/zestsms-pdf.css', array(), '' );
-        wp_enqueue_script( 'zestsms-pdf', ZESTSMS_FIELDS_URL . 'pdf/js/zestsms-pdf.js', array(), '', true );
+    		wp_enqueue_style( 'zestsms-pdf', ZESTSMS_FIELDS_URL . 'zestsms-pdf/css/zestsms-pdf.css', array(), '' );
+        wp_enqueue_script( 'zestsms-pdf', ZESTSMS_FIELDS_URL . 'zestsms-pdf/js/zestsms-pdf.js', array(), '', true );
     }
 }
 add_action( 'wp_enqueue_scripts', 'zestsms_pdf_field_assets' );

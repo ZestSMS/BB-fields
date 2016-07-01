@@ -22,21 +22,21 @@ function zestsms_geocomplete_field_assets() {
 		);
 		wp_enqueue_script(
 			'geocomplete',
-			ZESTSMS_FIELDS_URL . 'geocomplete/js/lib/jquery.geocomplete.min.js',
+			ZESTSMS_FIELDS_URL . 'zestsms-geocomplete/js/lib/jquery.geocomplete.min.js',
 			array('jquery'),
 			'1.6.5',
 			true
 		);
 		wp_enqueue_script(
 			'zestsms-geocomplete',
-			ZESTSMS_FIELDS_URL . 'geocomplete/js/zestsms-geocomplete.js',
+			ZESTSMS_FIELDS_URL . 'zestsms-geocomplete/js/zestsms-geocomplete.js',
 			array('jquery', 'geocomplete'),
 			'1.0',
 			true
 		);
 		wp_enqueue_style(
 			'zestsms-geocomplete',
-			ZESTSMS_FIELDS_URL . 'geocomplete/css/zestsms-geocomplete.css'
+			ZESTSMS_FIELDS_URL . 'zestsms-geocomplete/css/zestsms-geocomplete.css'
 		);
 
 	}

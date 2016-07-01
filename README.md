@@ -58,3 +58,8 @@ Allows the user to input 2 times to create a timespan.
 ##### WP-Dropdown
 Show a dropdown of a post type (default: page) using [wp_dropdown_pages](https://codex.wordpress.org/Function_Reference/wp_dropdown_pages) which also indents child pages. You can pass any additional arguments found in the codex (see example-module.php)
 ![WP-Dropdown](https://raw.githubusercontent.com/ZestSMS/BB-fields/master/images/wp-dropdown.jpg "WP-Dropdown")
+
+
+##### Select2
+Create a field with [select2](https://select2.github.io/). Pass your own options or allow the user to create options on the go which are stored for later (think repeater fields).
+![Select2](https://raw.githubusercontent.com/ZestSMS/BB-fields/master/images/select2.jpg "Select2")
