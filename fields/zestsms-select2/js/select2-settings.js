@@ -4,16 +4,27 @@
     _init: function()
     {
       var $el = $('select.zestsms-select2');
+
       $el.select2({
-        width: '100%'
-      }).on('select2:unselecting', function(e) {
-        $el.data('unselecting', true);
-      }).on('select2:open', function(e) { // note the open event is important
-        if ($el.data('unselecting')) {
-          $el.removeData('unselecting'); // you need to unset this before close
-          $el.select2('close');
-        }
+        width: '100%',
       });
+
+      if($el.attr('multiple')) {
+        var ul = $el.next('.select2-container').first('ul.select2-selection__rendered');
+        ul.sortable({
+          placeholder : 'ui-state-highlight',
+          forcePlaceholderSize: true,
+          items       : 'li:not(.select2-search__field)',
+          tolerance   : 'pointer',
+          stop: function() {
+            $($(ul).find('.select2-selection__choice').get().reverse()).each(function() {
+              var id = $(this).data('data').id;
+              var option = $el.find('option[value="' + id + '"]')[0];
+              $el.prepend(option);
+            });
+          }
+        });
+      }
     }
   }
 

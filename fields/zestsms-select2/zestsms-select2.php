@@ -41,6 +41,12 @@ function zestsms_select2_field( $name, $value, $field, $settings ) {
     }
   }
 
+  if(!empty($options) && $value) {
+    uksort($options, function($key1, $key2) use ($value) {
+      return (array_search($key1, $value) > array_search($key2, $value));
+    });
+  }
+
   // Show the select field
   ?>
   <select name="<?php echo $name; if(isset($field['multi-select'])) echo '[]'; ?>" class="zestsms-select2 <?php echo $field['class']; ?>" <?php if(isset($field['multi-select'])) echo 'multiple '; echo $attributes; ?>>
@@ -74,7 +80,7 @@ add_action( 'fl_builder_control_zestsms-select2', 'zestsms_select2_field', 1, 4 
 
 function zestsms_select2_field_assets() {
 	if ( class_exists( 'FLBuilderModel' ) && FLBuilderModel::is_builder_active() ) {
-		wp_enqueue_script( 'select2', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1-rc.1/js/select2.min.js', array('jquery'), '4.0.1', true );
+		wp_enqueue_script( 'select2', '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js', array('jquery'), '4.0.3', true );
 		wp_enqueue_script( 'select2-settings', ZESTSMS_FIELDS_URL . 'zestsms-select2/js/select2-settings.js', array(), '1.0', true );
 		wp_enqueue_style('select2', ZESTSMS_FIELDS_URL . 'zestsms-select2/css/select2.min.css', false, null);
 	}
