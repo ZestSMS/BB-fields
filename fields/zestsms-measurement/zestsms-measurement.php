@@ -32,6 +32,7 @@ function zestsms_measurement_field( $name, $value, $field, $settings ) {
 
 	if(!isset($field['placeholder'])) $field['placeholder'] = '0';
 	if(!isset($field['default'])) $field['default'] = 'auto';
+	if(!isset($value)) $value = 'auto';
 
 	foreach($units as $unit=>$param) {
 		// Define toggle
